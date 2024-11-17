@@ -1,0 +1,14 @@
+.scroll {
+  background-color: var(--clr-product);
+  height: 4px;
+  position: fixed;
+  top: 0;
+  z-index: 10000000;
+  left: 0;
+  width: 10px;
+  min-width: 10px;
+  &.ar {
+    left: auto;
+    right: 0;
+  }
+}

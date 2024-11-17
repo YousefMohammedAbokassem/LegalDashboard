@@ -1,0 +1,17 @@
+{
+  "admin": {
+    "users": [
+      {
+        "id": 1,
+        "nationalNum": "123456789",
+        "email": "youseff2000q@gmail.com",
+        "address": "address",
+        "birth": "birth",
+        "fullName": "John Doe",
+        "birthPlace": "birthPlace",
+        "gender": "gender",
+        "image_url": "/images/user1.jpg"
+      }
+    ]
+  }
+}
