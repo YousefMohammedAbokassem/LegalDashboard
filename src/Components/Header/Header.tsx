@@ -44,8 +44,8 @@ export default function Header() {
   const logOut = async () => {
     setProgressLop(true);
     try {
-      const res = await axios.get(
-        `${process.env.REACT_APP_API_URL}admin/logout`,
+      const res = await axios.post(
+        `${process.env.REACT_APP_API_URL}v1/lawyers/auth/signout`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access_token")}`,
@@ -57,6 +57,7 @@ export default function Header() {
       navigate("/");
       setProgressLop(false);
     } catch (error) {
+      console.log(error)
       setProgressLop(false);
       if (axios.isAxiosError(error) && error.response?.status === 401) {
         dispatch(logoutUser());

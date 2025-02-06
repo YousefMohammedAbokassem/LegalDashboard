@@ -33,16 +33,18 @@ type socialType = {
   language: string;
 };
 const tableHead = [
-  { nameHead: "fullName", bool: true },
-  { nameHead: "email", bool: true },
-  { nameHead: "address", bool: true },
-  { nameHead: "union", bool: true },
-  { nameHead: "affilation", bool: true },
-  { nameHead: "affilationDate", bool: true },
-  { nameHead: "yearsOf", bool: true },
-  { nameHead: "phone", bool: true },
+  { nameHead: "الاسم الكامل", bool: true },
+  { nameHead: "البريد الإلكتروني", bool: true },
+  { nameHead: "العنوان", bool: true },
+  { nameHead: "النقابة", bool: true },
+  { nameHead: "تاريخ الانتساب", bool: true },
+  { nameHead: "عدد السنوات", bool: true },
+  { nameHead: "رقم النقابة", bool: true },
+  { nameHead: "فرع النقابة", bool: false },
+  { nameHead: "سنوات الخبرة", bool: false },
   { nameHead: "", bool: false },
 ];
+
 export default function UsersProducts({
   loading,
   todos,

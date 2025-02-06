@@ -36,7 +36,9 @@ export default function Users() {
   const fetchTodos = async () => {
     try {
       const response = await axios.get(
-        `${process.env.REACT_APP_API_URL}v1/users`,
+        `${process.env.REACT_APP_API_URL}v1/${
+          localStorage.getItem("role") === "employee" ? "employees" : "admin"
+        }/get-users`,
         // `${process.env.REACT_APP_API_URL}admin/socialMedia`,
         {
           headers: {
@@ -45,8 +47,8 @@ export default function Users() {
         }
       );
       setTodos(response.data?.users);
-      console.log(response.data)
-      // hide loading after fetch 
+      console.log(response.data);
+      // hide loading after fetch
       setLoading(false);
     } catch (error) {
       console.error("Error fetching todos:", error);

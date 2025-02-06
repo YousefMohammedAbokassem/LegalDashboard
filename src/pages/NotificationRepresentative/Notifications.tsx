@@ -2,8 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 import { NavigateFunction, useNavigate } from "react-router-dom";
-import LayersAdd from "../../sections/LayersSection/LayersAdd";
-import LayersProducts from "../../sections/LayersSection/LayersTable/LayersProducts";
+import NotificationAdd from "../../sections/notificationsRepresentative/NotficationAdd";
+import NotificationProducts from "../../sections/notificationsRepresentative/notificationsRepresentativeTable/NotficationProducts";
 import { useDispatch } from "react-redux";
 import { logoutUser } from "../../store/slices/auth/authSlice";
 import { useSelector } from "react-redux";
@@ -36,14 +36,15 @@ export default function Layers() {
   const fetchTodos = async () => {
     try {
       const response = await axios.get(
-        `${process.env.REACT_APP_API_URL}admin/socialMedia`,
+        `${process.env.REACT_APP_API_URL}v1/representatives/notifications`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access_token")}`,
           },
         }
       );
-      setTodos(response.data.designs);
+      setTodos(response.data.notifications);
+      console.log(response.data.notifications);
       // hide loading after fetch
       setLoading(false);
     } catch (error) {
@@ -106,7 +107,7 @@ export default function Layers() {
       {showTableForm ? (
         ""
       ) : (
-        <LayersAdd
+        <NotificationAdd
           setAddCancel={setAddCancel}
           setShowTableForm={setShowTableForm}
           fetchTodos={fetchTodos}
@@ -118,7 +119,7 @@ export default function Layers() {
           navigate={navigate}
         />
       )}
-      <LayersProducts
+      <NotificationProducts
         loading={loading}
         todos={todos}
         setTodos={setTodos}

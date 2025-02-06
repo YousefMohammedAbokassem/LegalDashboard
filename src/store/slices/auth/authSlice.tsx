@@ -4,6 +4,7 @@ import axios from "axios";
 const initialState = {
   token: localStorage.getItem("access_token") || null,
   authenticate: localStorage.getItem("authenticate") || false,
+  role: localStorage.getItem("role") || "admin",
 };
 
 const authReducer = createSlice({
@@ -13,6 +14,7 @@ const authReducer = createSlice({
     logoutUser: (state) => {
       state.token = null;
       state.authenticate = false;
+      state.role = "admin";
       localStorage.removeItem("access_token");
       localStorage.removeItem("authenticate");
     },

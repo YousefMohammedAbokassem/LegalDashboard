@@ -24,28 +24,31 @@ export default function UsersRow({
       {...provided.dragHandleProps}
     >
       <TableCell align={`${language === "ar" ? "right" : "left"}`}>
-        1234
+        {item.name}
       </TableCell>
       <TableCell align={`${language === "ar" ? "right" : "left"}`}>
-        yousef
+        {item.email}
       </TableCell>
       <TableCell align={`${language === "ar" ? "right" : "left"}`}>
-        youseff2000q@gmail.com
+      {item.address}
       </TableCell>
       <TableCell align={`${language === "ar" ? "right" : "left"}`}>
-        Damascus
+      {item.union}
       </TableCell>
       <TableCell align={`${language === "ar" ? "right" : "left"}`}>
-        5/6/2001
+      {item.affiliation_date}
       </TableCell>
       <TableCell align={`${language === "ar" ? "right" : "left"}`}>
-        Damascus
+      {item.yearsOf}
       </TableCell>
       <TableCell align={`${language === "ar" ? "right" : "left"}`}>
-        Male
+      {item.union_number}
       </TableCell>
       <TableCell align={`${language === "ar" ? "right" : "left"}`}>
-        phone
+      {item.union_branch}
+      </TableCell>
+      <TableCell align={`${language === "ar" ? "right" : "left"}`}>
+      {item.years_of_experience}
       </TableCell>
       <TableCell align={`${language === "ar" ? "left" : "right"}`}>
         <div
